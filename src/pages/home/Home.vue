@@ -2,13 +2,14 @@
     <div>
         <Header/>
         <Swiper/>
-        www
+        <Icons />
     </div>
 </template>
 
 <script>
 import Swiper from './components/Swiper'
 import Header from './components/Header'
+import Icons from './components/Icons'
 export default {
     props: {
 
@@ -35,7 +36,8 @@ export default {
     },
     components: {
         Header,
-        Swiper
+        Swiper,
+        Icons
 
     },
 };

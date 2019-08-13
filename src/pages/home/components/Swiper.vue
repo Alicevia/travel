@@ -26,8 +26,6 @@ export default {
                     el: '.swiper-pagination',
                 },
                 loop:true
-
-                
             },
             swiperList:[]
         };
