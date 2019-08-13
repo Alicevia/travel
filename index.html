@@ -7,6 +7,20 @@
     <title>travel</title>
   </head>
   <body>
+    <script>
+      function computed(){
+        let desW =750;
+        let html = document.documentElement
+        let htmlW = html.clientWidth
+        if (htmlW>750) {
+          html.style.fontSize= '100px'
+          return
+        }
+        html.style.fontSize = htmlW/desW*100+'px'
+      }
+      computed()
+      window.addEventListener('resize',computed)
+    </script>
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>

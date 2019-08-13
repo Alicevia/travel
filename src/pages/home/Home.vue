@@ -1,10 +1,14 @@
 <template>
     <div>
-        home
+        <Header/>
+        <Swiper/>
+        www
     </div>
 </template>
 
 <script>
+import Swiper from './components/Swiper'
+import Header from './components/Header'
 export default {
     props: {
 
@@ -30,11 +34,14 @@ export default {
 
     },
     components: {
+        Header,
+        Swiper
 
     },
 };
 </script>
 
 <style>
+
 
 </style>
