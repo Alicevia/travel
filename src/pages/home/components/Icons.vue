@@ -1,48 +1,32 @@
 <template>
     <div class="icons">
         <swiper >
-            <swiper-slide>
-                <div class="icon">
+            <swiper-slide v-for="(iconList,index) in pages" :key="index" >
+                <div class="icon" v-for="item in iconList" :key="item.id">
                     <div class="icon-img">
-                        <img class="icon-img-content" src="http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png" alt="景点门票" style="opacity: 1;">
+                        <img class="icon-img-content" :src="item.imgUrl" alt="景点门票" style="opacity: 1;">
                     </div>
-                    <p class="icon-desc">热门景点</p>
+                    <p class="icon-desc">{{item.desc}}</p>
                 </div>
             </swiper-slide>
-            <swiper-slide>
-                <div class="icon">
-                    <div class="icon-img">
-                        <img class="icon-img-content" src="http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png" alt="景点门票" style="opacity: 1;">
-                    </div>
-                    <p class="icon-desc">热门景点</p>
-                </div>
-            </swiper-slide>            
+            
         </swiper >
     </div>
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 export default {
     props: {
 
     },
     data() {
         return {
-            iconList:[]
+            
         };
     },
     computed: {
-        pages(){
-            let pages = []
-            this.iconList.forEach((item,index)=>{
-                let page = Math.floor(index/8)
-                if (!pages[page]) {
-                    pages[page]=[]
-                }
-                pages[pages].push(item)
-            })
-            return pages
-        }
+        ...mapGetters(['pages'])
     },
     created() {
 
@@ -69,7 +53,7 @@ export default {
         height 0
         padding-bottom 50%
     .icons
-       
+        margin-top .1rem
         .icon
             position relative
             overflow hidden
